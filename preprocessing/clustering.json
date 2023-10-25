@@ -419,6 +419,14 @@
     ],
     "Transportation and Infrastructure": [
         [
+            0,
+            "airfield"
+        ],
+        [
+            2,
+            "airport terminal"
+        ],
+        [
             131,
             "elevator shaft"
         ],
@@ -944,14 +952,7 @@
         ]
     ],
     "Sports Arenas": [
-        [
-            0,
-            "airfield"
-        ],
-        [
-            2,
-            "airport terminal"
-        ],
+        
         [
             4,
             "alley"
