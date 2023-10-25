@@ -1,0 +1,1488 @@
+{
+    "Cultural and Historical Sites": [
+        [
+            13,
+            "archaelogical excavation"
+        ],
+        [
+            237,
+            "outdoor museum"
+        ],
+        [
+            239,
+            "natural history museum"
+        ],
+        [
+            297,
+            "science museum"
+        ],
+        [
+            330,
+            "asia temple"
+        ],
+        [
+            333,
+            "topiary garden"
+        ]
+    ],
+    "Urban and Architectural": [
+        [
+            12,
+            "arch"
+        ],
+        [
+            20,
+            "art school"
+        ],
+        [
+            67,
+            "building facade"
+        ],
+        [
+            77,
+            "campus"
+        ],
+        [
+            79,
+            "urban canal"
+        ],
+        [
+            136,
+            "excavation"
+        ],
+        [
+            153,
+            "formal garden"
+        ],
+        [
+            197,
+            "japanese garden"
+        ],
+        [
+            220,
+            "mansion"
+        ],
+        [
+            283,
+            "residential neighborhood"
+        ],
+        [
+            289,
+            "rock arch"
+        ],
+        [
+            290,
+            "roof garden"
+        ],
+        [
+            292,
+            "ruin"
+        ],
+        [
+            307,
+            "skyscraper"
+        ],
+        [
+            308,
+            "slum"
+        ]
+    ],
+    "Mountain": [
+        [
+            30,
+            "badlands"
+        ],
+        [
+            36,
+            "bamboo forest"
+        ],
+        [
+            73,
+            "butte"
+        ],
+        [
+            81,
+            "canyon"
+        ],
+        [
+            84,
+            "castle"
+        ],
+        [
+            85,
+            "catacomb"
+        ],
+        [
+            87,
+            "chalet"
+        ],
+        [
+            94,
+            "cliff"
+        ],
+        [
+            97,
+            "coast"
+        ],
+        [
+            110,
+            "creek"
+        ],
+        [
+            111,
+            "crevasse"
+        ],
+        [
+            113,
+            "dam"
+        ],
+        [
+            116,
+            "sand desert"
+        ],
+        [
+            118,
+            "desert road"
+        ],
+        [
+            127,
+            "driveway"
+        ],
+        [
+            150,
+            "broadleaf forest"
+        ],
+        [
+            151,
+            "forest path"
+        ],
+        [
+            152,
+            "forest road"
+        ],
+        [
+            154,
+            "fountain"
+        ],
+        [
+            163,
+            "glacier"
+        ],
+        [
+            167,
+            "grotto"
+        ],
+        [
+            180,
+            "hot spring"
+        ],
+        [
+            191,
+            "igloo"
+        ],
+        [
+            194,
+            "islet"
+        ],
+        [
+            200,
+            "kasbah"
+        ],
+        [
+            214,
+            "lighthouse"
+        ],
+        [
+            227,
+            "medina"
+        ],
+        [
+            232,
+            "mountain"
+        ],
+        [
+            233,
+            "mountain path"
+        ],
+        [
+            234,
+            "mountain snowy"
+        ],
+        [
+            251,
+            "pagoda"
+        ],
+        [
+            279,
+            "rainforest"
+        ],
+        [
+            304,
+            "ski resort"
+        ],
+        [
+            305,
+            "ski slope"
+        ],
+        [
+            317,
+            "staircase"
+        ],
+        [
+            334,
+            "tower"
+        ],
+        [
+            340,
+            "trench"
+        ],
+        [
+            341,
+            "tundra"
+        ],
+        [
+            344,
+            "valley"
+        ],
+        [
+            349,
+            "vineyard"
+        ],
+        [
+            350,
+            "volcano"
+        ],
+        [
+            354,
+            "water tower"
+        ],
+        [
+            355,
+            "waterfall"
+        ],
+        [
+            357,
+            "wave"
+        ],
+        [
+            361,
+            "windmill"
+        ]
+    ],
+    "Fields": [
+        [
+            104,
+            "corn field"
+        ],
+        [
+            141,
+            "wild field"
+        ],
+        [
+            142,
+            "field road"
+        ],
+        [
+            173,
+            "hayfield"
+        ],
+        [
+            224,
+            "marsh"
+        ],
+        [
+            280,
+            "reception"
+        ],
+        [
+            309,
+            "snowfield"
+        ],
+        [
+            311,
+            "stable"
+        ],
+        [
+            359,
+            "wheat field"
+        ]
+    ],
+    "Lakes and Oceans": [
+        [
+            9,
+            "aquarium"
+        ],
+        [
+            10,
+            "aqueduct"
+        ],
+        [
+            78,
+            "natural canal"
+        ],
+        [
+            145,
+            "fishpond"
+        ],
+        [
+            171,
+            "harbor"
+        ],
+        [
+            186,
+            "ice floe"
+        ],
+        [
+            187,
+            "ice shelf"
+        ],
+        [
+            190,
+            "iceberg"
+        ],
+        [
+            204,
+            "lagoon"
+        ],
+        [
+            205,
+            "natural lake"
+        ],
+        [
+            229,
+            "water moat"
+        ],
+        [
+            243,
+            "ocean"
+        ],
+        [
+            271,
+            "pond"
+        ],
+        [
+            277,
+            "raft"
+        ],
+        [
+            288,
+            "river"
+        ],
+        [
+            323,
+            "swamp"
+        ],
+        [
+            342,
+            "ocean deep underwater"
+        ]
+    ],
+    "Industrial and Technical": [
+        [
+            23,
+            "assembly line"
+        ],
+        [
+            28,
+            "auto factory"
+        ],
+        [
+            192,
+            "industrial area"
+        ],
+        [
+            247,
+            "oilrig"
+        ]
+    ],
+    "Daily Space": [
+        [
+            14,
+            "archive"
+        ],
+        [
+            55,
+            "berth"
+        ],
+        [
+            122,
+            "discotheque"
+        ],
+        [
+            216,
+            "loading dock"
+        ],
+        [
+            306,
+            "sky"
+        ]
+    ],
+    "Transportation and Infrastructure": [
+        [
+            131,
+            "elevator shaft"
+        ],
+        [
+            174,
+            "heliport"
+        ],
+        [
+            175,
+            "highway"
+        ],
+        [
+            278,
+            "railroad track"
+        ],
+        [
+            320,
+            "platform subway station"
+        ],
+        [
+            336,
+            "train interior"
+        ],
+        [
+            337,
+            "platform train station"
+        ],
+        [
+            347,
+            "viaduct"
+        ]
+    ],
+    "Agricultural and Rural": [
+        [
+            117,
+            "vegetation desert"
+        ],
+        [
+            138,
+            "farm"
+        ],
+        [
+            140,
+            "cultivated field"
+        ],
+        [
+            249,
+            "orchard"
+        ],
+        [
+            258,
+            "pasture"
+        ],
+        [
+            287,
+            "rice paddy"
+        ],
+        [
+            338,
+            "tree farm"
+        ],
+        [
+            345,
+            "vegetable garden"
+        ],
+        [
+            348,
+            "village"
+        ],
+        [
+            360,
+            "wind farm"
+        ]
+    ],
+    "Indoor Spaces": [
+        [
+            1,
+            "airplane cabin"
+        ],
+        [
+            3,
+            "alcove"
+        ],
+        [
+            8,
+            "outdoor apartment building"
+        ],
+        [
+            19,
+            "art gallery"
+        ],
+        [
+            21,
+            "art studio"
+        ],
+        [
+            22,
+            "artists loft"
+        ],
+        [
+            26,
+            "attic"
+        ],
+        [
+            32,
+            "exterior balcony"
+        ],
+        [
+            33,
+            "interior balcony"
+        ],
+        [
+            35,
+            "ballroom"
+        ],
+        [
+            41,
+            "barndoor"
+        ],
+        [
+            43,
+            "basement"
+        ],
+        [
+            45,
+            "bathroom"
+        ],
+        [
+            46,
+            "indoor bazaar"
+        ],
+        [
+            51,
+            "bedchamber"
+        ],
+        [
+            52,
+            "bedroom"
+        ],
+        [
+            56,
+            "biology laboratory"
+        ],
+        [
+            61,
+            "indoor booth"
+        ],
+        [
+            63,
+            "indoor bow window"
+        ],
+        [
+            69,
+            "burial chamber"
+        ],
+        [
+            70,
+            "bus interior"
+        ],
+        [
+            71,
+            "indoor bus station"
+        ],
+        [
+            74,
+            "outdoor cabin"
+        ],
+        [
+            75,
+            "cafeteria"
+        ],
+        [
+            82,
+            "car interior"
+        ],
+        [
+            88,
+            "chemistry lab"
+        ],
+        [
+            89,
+            "childs room"
+        ],
+        [
+            90,
+            "indoor church"
+        ],
+        [
+            91,
+            "outdoor church"
+        ],
+        [
+            92,
+            "classroom"
+        ],
+        [
+            93,
+            "clean room"
+        ],
+        [
+            95,
+            "closet"
+        ],
+        [
+            98,
+            "cockpit"
+        ],
+        [
+            100,
+            "computer room"
+        ],
+        [
+            102,
+            "conference room"
+        ],
+        [
+            106,
+            "corridor"
+        ],
+        [
+            120,
+            "dining hall"
+        ],
+        [
+            121,
+            "dining room"
+        ],
+        [
+            123,
+            "outdoor doorway"
+        ],
+        [
+            124,
+            "dorm room"
+        ],
+        [
+            125,
+            "downtown"
+        ],
+        [
+            126,
+            "dressing room"
+        ],
+        [
+            129,
+            "door elevator"
+        ],
+        [
+            130,
+            "elevator lobby"
+        ],
+        [
+            133,
+            "engine room"
+        ],
+        [
+            135,
+            "indoor escalator"
+        ],
+        [
+            143,
+            "fire escape"
+        ],
+        [
+            146,
+            "indoor flea market"
+        ],
+        [
+            147,
+            "indoor florist shop"
+        ],
+        [
+            156,
+            "indoor garage"
+        ],
+        [
+            157,
+            "outdoor garage"
+        ],
+        [
+            160,
+            "indoor general store"
+        ],
+        [
+            165,
+            "indoor greenhouse"
+        ],
+        [
+            166,
+            "outdoor greenhouse"
+        ],
+        [
+            168,
+            "indoor gymnasium"
+        ],
+        [
+            169,
+            "indoor hangar"
+        ],
+        [
+            170,
+            "outdoor hangar"
+        ],
+        [
+            176,
+            "home office"
+        ],
+        [
+            177,
+            "home theater"
+        ],
+        [
+            179,
+            "hospital room"
+        ],
+        [
+            182,
+            "hotel room"
+        ],
+        [
+            183,
+            "house"
+        ],
+        [
+            188,
+            "indoor ice skating rink"
+        ],
+        [
+            195,
+            "indoor jacuzzi"
+        ],
+        [
+            196,
+            "jail cell"
+        ],
+        [
+            201,
+            "outdoor kennel"
+        ],
+        [
+            202,
+            "kindergarden classroom"
+        ],
+        [
+            203,
+            "kitchen"
+        ],
+        [
+            210,
+            "lecture room"
+        ],
+        [
+            211,
+            "legislative chamber"
+        ],
+        [
+            212,
+            "indoor library"
+        ],
+        [
+            213,
+            "outdoor library"
+        ],
+        [
+            215,
+            "living room"
+        ],
+        [
+            218,
+            "lock chamber"
+        ],
+        [
+            219,
+            "locker room"
+        ],
+        [
+            222,
+            "indoor market"
+        ],
+        [
+            228,
+            "mezzanine"
+        ],
+        [
+            230,
+            "outdoor mosque"
+        ],
+        [
+            235,
+            "indoor movie theater"
+        ],
+        [
+            236,
+            "indoor museum"
+        ],
+        [
+            238,
+            "music studio"
+        ],
+        [
+            240,
+            "nursery"
+        ],
+        [
+            242,
+            "oast house"
+        ],
+        [
+            244,
+            "office"
+        ],
+        [
+            245,
+            "office building"
+        ],
+        [
+            246,
+            "office cubicles"
+        ],
+        [
+            248,
+            "operating room"
+        ],
+        [
+            250,
+            "orchestra pit"
+        ],
+        [
+            255,
+            "indoor parking garage"
+        ],
+        [
+            259,
+            "patio"
+        ],
+        [
+            263,
+            "phone booth"
+        ],
+        [
+            264,
+            "physics laboratory"
+        ],
+        [
+            269,
+            "playroom"
+        ],
+        [
+            272,
+            "porch"
+        ],
+        [
+            274,
+            "indoor pub"
+        ],
+        [
+            285,
+            "restaurant kitchen"
+        ],
+        [
+            286,
+            "restaurant patio"
+        ],
+        [
+            296,
+            "schoolhouse"
+        ],
+        [
+            298,
+            "server room"
+        ],
+        [
+            302,
+            "indoor shopping mall"
+        ],
+        [
+            303,
+            "shower"
+        ],
+        [
+            315,
+            "indoor stage"
+        ],
+        [
+            318,
+            "storage room"
+        ],
+        [
+            325,
+            "indoor swimming pool"
+        ],
+        [
+            327,
+            "outdoor synagogue"
+        ],
+        [
+            328,
+            "television room"
+        ],
+        [
+            329,
+            "television studio"
+        ],
+        [
+            331,
+            "throne room"
+        ],
+        [
+            339,
+            "tree house"
+        ],
+        [
+            343,
+            "utility room"
+        ],
+        [
+            352,
+            "waiting room"
+        ],
+        [
+            364,
+            "zen garden"
+        ]
+    ],
+    "Sports Arenas": [
+        [
+            0,
+            "airfield"
+        ],
+        [
+            2,
+            "airport terminal"
+        ],
+        [
+            4,
+            "alley"
+        ],
+        [
+            5,
+            "amphitheater"
+        ],
+        [
+            11,
+            "arcade"
+        ],
+        [
+            15,
+            "hockey arena"
+        ],
+        [
+            16,
+            "performance arena"
+        ],
+        [
+            17,
+            "rodeo arena"
+        ],
+        [
+            24,
+            "outdoor athletic field"
+        ],
+        [
+            25,
+            "public atrium"
+        ],
+        [
+            27,
+            "auditorium"
+        ],
+        [
+            34,
+            "ball pit"
+        ],
+        [
+            38,
+            "banquet hall"
+        ],
+        [
+            39,
+            "bar"
+        ],
+        [
+            40,
+            "barn"
+        ],
+        [
+            42,
+            "baseball field"
+        ],
+        [
+            44,
+            "indoor basketball court"
+        ],
+        [
+            54,
+            "beer hall"
+        ],
+        [
+            64,
+            "bowling alley"
+        ],
+        [
+            65,
+            "boxing ring"
+        ],
+        [
+            66,
+            "bridge"
+        ],
+        [
+            68,
+            "bullring"
+        ],
+        [
+            101,
+            "conference center"
+        ],
+        [
+            103,
+            "construction site"
+        ],
+        [
+            105,
+            "corral"
+        ],
+        [
+            109,
+            "courtyard"
+        ],
+        [
+            112,
+            "crosswalk"
+        ],
+        [
+            134,
+            "entrance hall"
+        ],
+        [
+            148,
+            "food court"
+        ],
+        [
+            149,
+            "football field"
+        ],
+        [
+            189,
+            "outdoor ice skating rink"
+        ],
+        [
+            225,
+            "martial arts gym"
+        ],
+        [
+            252,
+            "palace"
+        ],
+        [
+            256,
+            "outdoor parking garage"
+        ],
+        [
+            257,
+            "parking lot"
+        ],
+        [
+            260,
+            "pavilion"
+        ],
+        [
+            295,
+            "sauna"
+        ],
+        [
+            310,
+            "soccer field"
+        ],
+        [
+            312,
+            "baseball stadium"
+        ],
+        [
+            313,
+            "football stadium"
+        ],
+        [
+            314,
+            "soccer stadium"
+        ],
+        [
+            316,
+            "outdoor stage"
+        ],
+        [
+            332,
+            "ticket booth"
+        ],
+        [
+            351,
+            "outdoor volleyball court"
+        ],
+        [
+            358,
+            "wet bar"
+        ]
+    ],
+    "Recreational Facilities": [
+        [
+            6,
+            "amusement arcade"
+        ],
+        [
+            7,
+            "amusement park"
+        ],
+        [
+            18,
+            "army base"
+        ],
+        [
+            47,
+            "outdoor bazaar"
+        ],
+        [
+            48,
+            "beach"
+        ],
+        [
+            49,
+            "beach house"
+        ],
+        [
+            53,
+            "beer garden"
+        ],
+        [
+            57,
+            "boardwalk"
+        ],
+        [
+            58,
+            "boat deck"
+        ],
+        [
+            59,
+            "boathouse"
+        ],
+        [
+            62,
+            "botanical garden"
+        ],
+        [
+            76,
+            "campsite"
+        ],
+        [
+            107,
+            "cottage"
+        ],
+        [
+            108,
+            "courthouse"
+        ],
+        [
+            119,
+            "outdoor diner"
+        ],
+        [
+            144,
+            "fire station"
+        ],
+        [
+            159,
+            "exterior gazebo"
+        ],
+        [
+            164,
+            "golf course"
+        ],
+        [
+            181,
+            "outdoor hotel"
+        ],
+        [
+            184,
+            "outdoor hunting lodge"
+        ],
+        [
+            193,
+            "outdoor inn"
+        ],
+        [
+            199,
+            "junkyard"
+        ],
+        [
+            206,
+            "landfill"
+        ],
+        [
+            207,
+            "landing deck"
+        ],
+        [
+            209,
+            "lawn"
+        ],
+        [
+            221,
+            "manufactured home"
+        ],
+        [
+            223,
+            "outdoor market"
+        ],
+        [
+            231,
+            "motel"
+        ],
+        [
+            241,
+            "nursing home"
+        ],
+        [
+            254,
+            "park"
+        ],
+        [
+            265,
+            "picnic area"
+        ],
+        [
+            266,
+            "pier"
+        ],
+        [
+            268,
+            "playground"
+        ],
+        [
+            273,
+            "promenade"
+        ],
+        [
+            275,
+            "racecourse"
+        ],
+        [
+            276,
+            "raceway"
+        ],
+        [
+            281,
+            "recreation room"
+        ],
+        [
+            291,
+            "rope bridge"
+        ],
+        [
+            293,
+            "runway"
+        ],
+        [
+            294,
+            "sandbox"
+        ],
+        [
+            324,
+            "swimming hole"
+        ],
+        [
+            326,
+            "outdoor swimming pool"
+        ],
+        [
+            346,
+            "veterinarians office"
+        ],
+        [
+            353,
+            "water park"
+        ],
+        [
+            356,
+            "watering hole"
+        ],
+        [
+            362,
+            "yard"
+        ],
+        [
+            363,
+            "youth hostel"
+        ]
+    ],
+    "Stores": [
+        [
+            29,
+            "auto showroom"
+        ],
+        [
+            31,
+            "shop bakery"
+        ],
+        [
+            37,
+            "bank vault"
+        ],
+        [
+            50,
+            "beauty salon"
+        ],
+        [
+            60,
+            "bookstore"
+        ],
+        [
+            72,
+            "butchers shop"
+        ],
+        [
+            80,
+            "candy store"
+        ],
+        [
+            83,
+            "carrousel"
+        ],
+        [
+            86,
+            "cemetery"
+        ],
+        [
+            96,
+            "clothing store"
+        ],
+        [
+            99,
+            "coffee shop"
+        ],
+        [
+            114,
+            "delicatessen"
+        ],
+        [
+            115,
+            "department store"
+        ],
+        [
+            128,
+            "drugstore"
+        ],
+        [
+            132,
+            "embassy"
+        ],
+        [
+            137,
+            "fabric store"
+        ],
+        [
+            139,
+            "fastfood restaurant"
+        ],
+        [
+            155,
+            "galley"
+        ],
+        [
+            158,
+            "gas station"
+        ],
+        [
+            161,
+            "outdoor general store"
+        ],
+        [
+            162,
+            "gift shop"
+        ],
+        [
+            172,
+            "hardware store"
+        ],
+        [
+            178,
+            "hospital"
+        ],
+        [
+            185,
+            "ice cream parlor"
+        ],
+        [
+            198,
+            "jewelry shop"
+        ],
+        [
+            208,
+            "laundromat"
+        ],
+        [
+            217,
+            "lobby"
+        ],
+        [
+            226,
+            "mausoleum"
+        ],
+        [
+            253,
+            "pantry"
+        ],
+        [
+            261,
+            "pet shop"
+        ],
+        [
+            262,
+            "pharmacy"
+        ],
+        [
+            267,
+            "pizzeria"
+        ],
+        [
+            270,
+            "plaza"
+        ],
+        [
+            282,
+            "repair shop"
+        ],
+        [
+            284,
+            "restaurant"
+        ],
+        [
+            299,
+            "shed"
+        ],
+        [
+            300,
+            "shoe shop"
+        ],
+        [
+            301,
+            "shopfront"
+        ],
+        [
+            319,
+            "street"
+        ],
+        [
+            321,
+            "supermarket"
+        ],
+        [
+            322,
+            "sushi bar"
+        ],
+        [
+            335,
+            "toyshop"
+        ]
+    ]
+}
