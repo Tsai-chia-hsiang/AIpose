@@ -8,6 +8,7 @@ import sys
 import json
 from PIL import Image
 
+
 class Place365_Pretrianed_ResNet50():
 
     def __init__(self, modelat:os.PathLike, classespath:os.PathLike, label_clustering_file:os.PathLike)->tuple:
@@ -63,11 +64,13 @@ class Place365_Pretrianed_ResNet50():
 
 if __name__ == "__main__":
 
-    class_fname = osp.join('categories_places365.txt')
-    modelat = osp.join(".")
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    class_fname = osp.join(dir_path ,'categories_places365.txt')
+    label_clustering_file = osp.join(dir_path, "label_with_topic.json")
+    
     place365rn50 = Place365_Pretrianed_ResNet50(
-        modelat=osp.join("."), classespath=osp.join('categories_places365.txt'),
-        label_clustering_file=osp.join("label_with_topic.json")
+        modelat=dir_path, classespath=class_fname,
+        label_clustering_file=label_clustering_file
     )
     r = place365rn50.predict(sys.argv[1], topk=1)
     print(r)
