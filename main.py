@@ -2,7 +2,6 @@ from places365 import run
 import sys
 import os
 import os.path as osp
-from PIL import Image
 
 place365rn50 = run.Place365_Pretrianed_ResNet50(
     modelat=run.p365dir, classespath=run.class_fname,
