@@ -8,6 +8,9 @@ import sys
 import json
 from PIL import Image
 
+p365dir = os.path.dirname(os.path.realpath(__file__))
+class_fname = osp.join(p365dir ,'categories_places365.txt')
+label_clustering_file = osp.join(p365dir, "label_with_topic.json")
 
 class Place365_Pretrianed_ResNet50():
 
@@ -44,8 +47,8 @@ class Place365_Pretrianed_ResNet50():
                 classes.append(line.strip().split(' ')[0][3:])           
         return classes
 
-    def predict(self,scene_img_path:os.PathLike, topk:int=5)->list:
-        img = Image.open(scene_img_path)
+    def predict(self,scene_img, topk:int=5)->list:
+        img = Image.open(scene_img) if isinstance(scene_img, str) else scene_img
         input_img = self.argumentation(img).unsqueeze(0)
         logit = self.model.forward(input_img)
         h_x = F.softmax(logit, 1).data.squeeze()
@@ -54,7 +57,7 @@ class Place365_Pretrianed_ResNet50():
         for i in range(0,topk):
             topk_id_with_label_prob.append(
                 {
-                    'id':int(idx[i].item()), 
+                    'id':int(idx[i].item()),  
                     'label':self.classes[idx[i]], 
                     'topic':self.label_clustering[idx[i]],
                     'prob':float(probs[i].item())
@@ -62,15 +65,19 @@ class Place365_Pretrianed_ResNet50():
             )
         return topk_id_with_label_prob
 
-if __name__ == "__main__":
 
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    class_fname = osp.join(dir_path ,'categories_places365.txt')
-    label_clustering_file = osp.join(dir_path, "label_with_topic.json")
+def predict():
     
     place365rn50 = Place365_Pretrianed_ResNet50(
-        modelat=dir_path, classespath=class_fname,
+        modelat=p365dir, classespath=class_fname,
         label_clustering_file=label_clustering_file
     )
     r = place365rn50.predict(sys.argv[1], topk=1)
-    print(r)
+    return r
+
+if __name__ == "__main__":
+    predict()
+    
+    
+    
+    
