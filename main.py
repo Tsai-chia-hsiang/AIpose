@@ -19,7 +19,7 @@ def walk_dir(root:os.PathLike)->list:
             u.append(os.path.join(r, f))             
     return u
 
-def main(cls=False, img = None):
+def main(cls=False, img = None): 
     img = sys.argv[1] if cls else img 
     p = predict(img)
     print(p)
