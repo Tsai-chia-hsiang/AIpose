@@ -18,12 +18,18 @@ def walk_dir(root:os.PathLike)->list:
 
 
 def detection(img_name:os.PathLike, model_pose:YOLO, model_seg:YOLO, out_name:os.PathLike):
-    results_seg = model_seg(img_name, verbose=False)#image name
     i=cv.imread(img_name)#get origin image
+    i = cv.resize(i, (640,640))
+    results_seg = model_seg(i, verbose=False)#image name
     #print(img_name)
     for r in results_seg:
         cls = r.boxes.cls.to(dtype=torch.int32)
-        person_cls = torch.argwhere(cls == 0)[0]
+        j = torch.argwhere(cls == 0)
+        person_cls = -1
+        try:
+            person_cls = j[0]
+        except:
+            continue
         a_person = person_cls[0].item()
         m = (r.masks.data)[a_person]
         mask = torch.permute(m[None, :, :], (1, 2, 0)).numpy()
@@ -44,6 +50,9 @@ def detection(img_name:os.PathLike, model_pose:YOLO, model_seg:YOLO, out_name:os
         im_array = results_pose[0].plot(boxes=False, labels=False, img=clone)
         bbox = results_pose[0].boxes.xyxy.squeeze()
         bbox = bbox.to(dtype=int).tolist()
+        if len(bbox) < 4:
+            print(img_name)
+            continue
         im_array = im_array[bbox[1]:bbox[3], bbox[0]:bbox[2],:]
         cv.imwrite(out_name,im_array)
 
