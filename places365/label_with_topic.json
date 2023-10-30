@@ -214,7 +214,7 @@
             30,
             "badlands"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -256,7 +256,7 @@
             36,
             "bamboo forest"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -515,7 +515,7 @@
             73,
             "butte"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -571,7 +571,7 @@
             81,
             "canyon"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -592,14 +592,14 @@
             84,
             "castle"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             85,
             "catacomb"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -613,7 +613,7 @@
             87,
             "chalet"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -662,7 +662,7 @@
             94,
             "cliff"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -683,7 +683,7 @@
             97,
             "coast"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -774,14 +774,14 @@
             110,
             "creek"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             111,
             "crevasse"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -795,7 +795,7 @@
             113,
             "dam"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -816,7 +816,7 @@
             116,
             "sand desert"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -830,7 +830,7 @@
             118,
             "desert road"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -893,7 +893,7 @@
             127,
             "driveway"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1054,21 +1054,21 @@
             150,
             "broadleaf forest"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             151,
             "forest path"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             152,
             "forest road"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1082,7 +1082,7 @@
             154,
             "fountain"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1145,7 +1145,7 @@
             163,
             "glacier"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1173,7 +1173,7 @@
             167,
             "grotto"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1264,7 +1264,7 @@
             180,
             "hot spring"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1341,7 +1341,7 @@
             191,
             "igloo"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1362,7 +1362,7 @@
             194,
             "islet"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1404,7 +1404,7 @@
             200,
             "kasbah"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1502,7 +1502,7 @@
             214,
             "lighthouse"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1593,7 +1593,7 @@
             227,
             "medina"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1626,23 +1626,23 @@
     [
         [
             232,
-            "mountain"
+            "Mountains"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             233,
-            "mountain path"
+            "Mountains path"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             234,
-            "mountain snowy"
+            "Mountains snowy"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1761,7 +1761,7 @@
             251,
             "pagoda"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -1957,7 +1957,7 @@
             279,
             "rainforest"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2132,14 +2132,14 @@
             304,
             "ski resort"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             305,
             "ski slope"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2223,7 +2223,7 @@
             317,
             "staircase"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2342,7 +2342,7 @@
             334,
             "tower"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2384,14 +2384,14 @@
             340,
             "trench"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             341,
             "tundra"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2412,7 +2412,7 @@
             344,
             "valley"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2447,14 +2447,14 @@
             349,
             "vineyard"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             350,
             "volcano"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2482,14 +2482,14 @@
             354,
             "water tower"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
             355,
             "waterfall"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2503,7 +2503,7 @@
             357,
             "wave"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
@@ -2531,7 +2531,7 @@
             361,
             "windmill"
         ],
-        "Mountain"
+        "Mountains"
     ],
     [
         [
