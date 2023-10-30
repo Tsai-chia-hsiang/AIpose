@@ -50,12 +50,16 @@ def combine_pose_to_scene(scene:os.PathLike, pose:os.PathLike)->np.ndarray:
 
 def run_smaple(sampleroot:os.PathLike): 
 
+    resultroot = osp.join(sampleroot, "result")
+    if not osp.exists(resultroot):
+        os.mkdir(resultroot)
+
     for smaplesecen in walk_dir(sampleroot):
         p = predict(smaplesecen)
         cluster_dir = osp.join("sample_skeleton", p['topic'][1])
         suggestion_poses = walk_dir(cluster_dir)
         d,f = osp.split(smaplesecen)
-        add_pose_img_path = os.path.join(osp.join(d, "result"), f)
+        add_pose_img_path = os.path.join(resultroot, f)
         combine = combine_pose_to_scene(smaplesecen, suggestion_poses[0])
         cv2.imwrite(add_pose_img_path, combine)
 
