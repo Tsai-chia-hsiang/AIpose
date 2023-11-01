@@ -1,6 +1,7 @@
 import tkinter as tk
-from typing import Any
 import os
+import cv2
+import gc
 from PIL import Image, ImageTk
 from main import walk_dir, combine_pose_to_scene, predict
 
@@ -11,20 +12,26 @@ class app():
         self.__root = tk.Tk()
         self.__user_gender = gender
         self.__root.title('AI Pose cconcept')
-        self.__root.geometry('600x800')
+        self.__root.geometry('800x800')
         self.__sample_scene = {
+            'path':demo_scene.copy(),
             'image':[],
             'button':[], 
-            'coordinate':[[20,20],[20,300],[20,530]],
+            'coordinate':[[20,20],[20,280],[20,540]],
             'label':[None, None, None]
         }
-        self. __read_and_set_photo_bnts(demo_scene=demo_scene)
+        self.__demo_scene_with_pose = None
+        self.__img = None
+        self. __read_and_set_photo_bnts()
+        
 
-    def __read_and_set_photo_bnts(self, demo_scene:list):
+    def __read_and_set_photo_bnts(self):
 
-        for idx, i in enumerate(demo_scene):
+        for idx, i in enumerate(self.__sample_scene['path']):
             j = Image.open(i)
-            self.__sample_scene['image'].append([j, ImageTk.PhotoImage(j.resize((250,250)))])
+            self.__sample_scene['image'].append(
+                [j, ImageTk.PhotoImage(j.resize((150,250)))]
+            )
             self.__sample_scene['button'].append(
                 tk.Button(
                     self.__root, text=i, 
@@ -46,17 +53,29 @@ class app():
             )
             self.__sample_scene['label'][i] = (p['label'], cluster_dir)
     
-        #print(self.__sample_scene['label'])
+        print(self.__sample_scene['label'])
         self.__photoshopped(i)
+    
     def __photoshopped(self, i:int):
         selection = walk_dir(self.__sample_scene['label'][i][1])
-        print(selection)
-    
+        print(self.__sample_scene['path'][i])
+        self.__img = Image.fromarray(
+            cv2.cvtColor(
+                combine_pose_to_scene(self.__sample_scene['path'][i], selection[0]),
+                cv2.COLOR_BGR2RGB
+            )
+        )
+
+        if self.__demo_scene_with_pose is not None:
+            del self.__demo_scene_with_pose
+            gc.collect()
+        self.__img = ImageTk.PhotoImage(self.__img)       
+        self.__demo_scene_with_pose = tk.Label(self.__root, image=self.__img)
+        self.__demo_scene_with_pose.place(x=150, y=20)
+
+
     def __call__(self) -> None:
         self.__root.mainloop()
-
-    
-
 
 if __name__ == "__main__":
     print("demo")
