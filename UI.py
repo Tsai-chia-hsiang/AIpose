@@ -1,7 +1,6 @@
 import tkinter as tk
 import os
-import cv2
-import gc
+import cv2  
 from PIL import Image, ImageTk
 from main import walk_dir, combine_pose_to_scene, predict
 
@@ -61,7 +60,7 @@ class app():
             self.__demo_scene_with_pose.destroy()
         pp = combine_pose_to_scene(self.__sample_scene['path'][i], selection[0])
         self.__img = Image.fromarray(cv2.cvtColor(pp, cv2.COLOR_BGR2RGB))
-        self.__img = self.__img.resize(size=(300,400))
+        self.__img = self.__img.resize(size=(400,300))
         self.__img = ImageTk.PhotoImage(self.__img)       
         self.__demo_scene_with_pose = tk.Label(self.__root, image=self.__img)
         self.__demo_scene_with_pose.place(x=300, y=20)
