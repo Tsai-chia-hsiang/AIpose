@@ -26,14 +26,12 @@ def combine_pose_to_scene(scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndar
     def resize_pose_shape(poseshape:tuple, sceneshape:tuple)->tuple:
         f = 1.6 if np.argmax(sceneshape) == 0 else 1.0 
         ratio = poseshape[1]/poseshape[0]
-        print(ratio)
         resize_aix_ratio = sceneshape[0]/f
         resize = [int(resize_aix_ratio),int(resize_aix_ratio*ratio)]
-        print(resize)
+        #print(resize)
         if resize[1] > sceneshape[1]:
             resize[1] = int(sceneshape[1]/f)
         resize.reverse()
-        print(resize)
         return tuple(resize)
     
     s = cv2.imread(scene) if isinstance(scene, str) else scene
@@ -43,11 +41,11 @@ def combine_pose_to_scene(scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndar
     spose = cv2.resize(spose,resize)
     spose = spose.astype(np.float32)
 
-    print(sshape)
-    print(spose.shape)
+    # print(sshape)
+    # print(spose.shape)
 
     w_left = sshape[1]//2 - spose.shape[1]//2
-    print(w_left)
+    # print(w_left)
     m = (spose <= 85.0).astype(np.float32)
     posepart =s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] 
     s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] = posepart*m + spose
