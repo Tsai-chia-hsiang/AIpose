@@ -23,7 +23,6 @@ class app():
         self.__demo_scene_with_pose = None
         self.__img = None
         self. __read_and_set_photo_bnts()
-        
 
     def __read_and_set_photo_bnts(self):
 
@@ -58,21 +57,14 @@ class app():
     
     def __photoshopped(self, i:int):
         selection = walk_dir(self.__sample_scene['label'][i][1])
-        print(self.__sample_scene['path'][i])
-        self.__img = Image.fromarray(
-            cv2.cvtColor(
-                combine_pose_to_scene(self.__sample_scene['path'][i], selection[0]),
-                cv2.COLOR_BGR2RGB
-            )
-        )
-
         if self.__demo_scene_with_pose is not None:
-            del self.__demo_scene_with_pose
-            gc.collect()
+            self.__demo_scene_with_pose.destroy()
+        pp = combine_pose_to_scene(self.__sample_scene['path'][i], selection[0])
+        self.__img = Image.fromarray(cv2.cvtColor(pp, cv2.COLOR_BGR2RGB))
+        self.__img = self.__img.resize(size=(300,400))
         self.__img = ImageTk.PhotoImage(self.__img)       
         self.__demo_scene_with_pose = tk.Label(self.__root, image=self.__img)
-        self.__demo_scene_with_pose.place(x=150, y=20)
-
+        self.__demo_scene_with_pose.place(x=300, y=20)
 
     def __call__(self) -> None:
         self.__root.mainloop()
