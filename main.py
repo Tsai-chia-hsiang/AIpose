@@ -1,6 +1,7 @@
 from places365 import run
 import os
 import cv2
+import gc
 import numpy as np
 import tkinter as tk
 import numpy as np
@@ -41,13 +42,20 @@ class app():
             'coordinate':[[20,20],[20,280],[20,540]],
             'label':[None, None, None]
         }
-        self.__demo_scene_with_pose = None
+        self.__pose_selection =None
+        self.__pose = {
+            'poseimg':[],
+            'bnt':[]
+        }
+        self.__demo_scene = None
         self.__img = None
         self.__read_and_set_photo_bnts()
-        self.__phone_scene = {
-            'phone':[],'srcimage':[]
-        }
+        self.__phone_scene = {'phone':[],'srcimage':[]}
+        self.__next_pose_set_bnt = None
+        self.__previous_pose_set_bnt = None
         self.__phone_background()
+        self.__poseid_base = 0
+        self.__select_scene = None
         
     def __phone_background(self):
 
@@ -70,7 +78,7 @@ class app():
                 tk.Button(
                     self.__root, text=i, 
                     image=self.__sample_scene['image'][idx][1],
-                    command=lambda c=idx:self.__predict(c)
+                    command=lambda c=idx:self.__show_scene(c)
                 )
             )
             self.__sample_scene['button'][idx].place(
@@ -78,33 +86,80 @@ class app():
                 y = self.__sample_scene['coordinate'][idx][1]
             )
 
+    def __del_scene_label(self):
+        if self.__demo_scene is not None:
+            self.__demo_scene.destroy()
+
+    def __del_pose_bnt(self):
+    
+        if len(self.__pose['bnt']) == 0:
+            return
+    
+        for i in range(len(self.__pose['bnt'])):
+            self.__pose['bnt'][i].destroy()
+
+        self.__pose['poseimg'].clear()
+        self.__pose['bnt'].clear()
+        gc.collect()
+    
+    def __make_pose_bnt(self):
+        pose_pathes = self.__pose_selection[self.__poseid_base:self.__poseid_base+3]
+        for idx, p in enumerate(pose_pathes):
+            i = Image.open(p)
+            i = ImageTk.PhotoImage(i.resize((60,100)))
+            self.__pose['poseimg'].append(i)
+            self.__pose['bnt'].append(
+                tk.Button(
+                    self.__root,
+                    image=self.__pose['poseimg'][idx], 
+                    command=lambda c=idx:self.__photoshop(self.__poseid_base+c)
+                )
+            )
+    
+    def __place_pose_bar(self):
+        offset = 0
+        for idx in range(len(self.__pose['bnt'])):
+            self.__pose['bnt'][idx].place(x = 355+offset, y = 120)
+            self.__pose['bnt'][idx].lift(self.__demo_scene)
+            offset += 85
+    
+    def __show_scene(self, i:int):
+        self.__select_scene = i
+        self.__del_scene_label()
+        self.__del_pose_bnt()
+        self.__poseid_base = 0
+        self.__predict(i)
+        self.__make_pose_bnt()
+        self.__img = ImageTk.PhotoImage(Image.fromarray(self.__sample_scene['np_demo_image'][i]))    
+        self.__demo_scene = tk.Label(self.__root, image=self.__img)
+        self.__demo_scene.place(x=320, y=114)
+        self.__place_pose_bar()
+        
     def __predict(self, i:int):
     
-        if self.__sample_scene['label'] is not None:
+        if self.__sample_scene['label'][i] is None:
             p = predict(self.__sample_scene['image'][i][0])
-            cluster_dir = os.path.join(
-                "sample_skeleton", p['topic'][1], self.__user_gender
-            )
+            cluster_dir = os.path.join("sample_skeleton", p['topic'][1], self.__user_gender)
             self.__sample_scene['label'][i] = (p['label'], cluster_dir)
+            # print("predict scene")
+        # print("prepare pose")
+        self.__pose_selection = walk_dir(self.__sample_scene['label'][i][1]) 
     
-        
-        self.__photoshopped(i)
-    
-    def __photoshopped(self, i:int):
+    def __photoshop(self, poseid:int):
 
-        selection = walk_dir(self.__sample_scene['label'][i][1])
-        
-        if self.__demo_scene_with_pose is not None:
-            self.__demo_scene_with_pose.destroy()
+        self.__del_scene_label()
         
         self.__img = self.combine_pose_to_scene(
-            self.__sample_scene['np_demo_image'][i].copy(), 
-            cv2.cvtColor( cv2.imread(selection[0]), cv2.COLOR_BGR2RGB)
+            self.__sample_scene['np_demo_image'][self.__select_scene].copy(), 
+            cv2.cvtColor( 
+                cv2.imread(self.__pose_selection[poseid]), 
+                cv2.COLOR_BGR2RGB
+            )
         )
-
         self.__img = ImageTk.PhotoImage(Image.fromarray(self.__img))    
-        self.__demo_scene_with_pose = tk.Label(self.__root, image=self.__img)
-        self.__demo_scene_with_pose.place(x=320, y=114)
+        self.__demo_scene = tk.Label(self.__root, image=self.__img)
+        self.__demo_scene.place(x=320, y=114)
+        self.__place_pose_bar()
 
     def combine_pose_to_scene(self, scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndarray)->np.ndarray:
         
@@ -140,6 +195,5 @@ class app():
         self.__root.mainloop()
 
 if __name__ == "__main__":
-    print("demo")
     a = app(demo_scene=walk_dir(os.path.join("scenes")))
     a()
