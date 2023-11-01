@@ -149,7 +149,7 @@ class app():
         for idx in range(len(self.__pose['bnt'])):
             self.__pose['bnt'][idx].place(x = 365+offset, y = 120)
             self.__pose['bnt'][idx].lift(self.__demo_scene)
-            offset += 85
+            offset += 82
         
         if self.__poseid_base > 2:
             self.__previous_pose_set_bnt.place(x = 330, y = 160)
