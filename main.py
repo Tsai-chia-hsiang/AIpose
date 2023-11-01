@@ -23,36 +23,6 @@ def walk_dir(root:os.PathLike)->list:
             u.append(os.path.join(r, f))             
     return u
 
-def combine_pose_to_scene(scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndarray)->np.ndarray:
-    
-    def resize_pose_shape(poseshape:tuple, sceneshape:tuple)->tuple:
-        f = 1.6 if np.argmax(sceneshape) == 0 else 1.0 
-        ratio = poseshape[1]/poseshape[0]
-        resize_aix_ratio = sceneshape[0]/f
-        resize = [int(resize_aix_ratio),int(resize_aix_ratio*ratio)]
-        #print(resize)
-        if resize[1] > sceneshape[1]:
-            resize[1] = int(sceneshape[1]/f)
-        resize.reverse()
-        return tuple(resize)
-    
-    s = cv2.imread(scene) if isinstance(scene, str) else scene
-    spose = cv2.imread(pose) if isinstance(pose, str) else pose
-    sshape = s.shape
-    resize = resize_pose_shape(spose.shape, sshape)
-    spose = cv2.resize(spose,resize)
-    spose = spose.astype(np.float32)
-
-    # print(sshape)
-    # print(spose.shape)
-
-    w_left = sshape[1]//2 - spose.shape[1]//2
-    # print(w_left)
-    m = (spose <= 85.0).astype(np.float32)
-    posepart =s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] 
-    s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] = posepart*m + spose
-    return np.clip(0, 255, s).astype(np.uint8)
-
 
 class app():
 
@@ -127,7 +97,7 @@ class app():
         if self.__demo_scene_with_pose is not None:
             self.__demo_scene_with_pose.destroy()
         
-        self.__img = combine_pose_to_scene(
+        self.__img = self.combine_pose_to_scene(
             self.__sample_scene['np_demo_image'][i].copy(), 
             cv2.cvtColor( cv2.imread(selection[0]), cv2.COLOR_BGR2RGB)
         )
@@ -136,6 +106,35 @@ class app():
         self.__demo_scene_with_pose = tk.Label(self.__root, image=self.__img)
         self.__demo_scene_with_pose.place(x=320, y=114)
 
+    def combine_pose_to_scene(self, scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndarray)->np.ndarray:
+        
+        def resize_pose_shape(poseshape:tuple, sceneshape:tuple)->tuple:
+            f = 1.6 if np.argmax(sceneshape) == 0 else 1.0 
+            ratio = poseshape[1]/poseshape[0]
+            resize_aix_ratio = sceneshape[0]/f
+            resize = [int(resize_aix_ratio),int(resize_aix_ratio*ratio)]
+            #print(resize)
+            if resize[1] > sceneshape[1]:
+                resize[1] = int(sceneshape[1]/f)
+            resize.reverse()
+            return tuple(resize)
+        
+        s = cv2.imread(scene) if isinstance(scene, str) else scene
+        spose = cv2.imread(pose) if isinstance(pose, str) else pose
+        sshape = s.shape
+        resize = resize_pose_shape(spose.shape, sshape)
+        spose = cv2.resize(spose,resize)
+        spose = spose.astype(np.float32)
+
+        # print(sshape)
+        # print(spose.shape)
+
+        w_left = sshape[1]//2 - spose.shape[1]//2
+        # print(w_left)
+        m = (spose <= 85.0).astype(np.float32)
+        posepart =s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] 
+        s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] = posepart*m + spose
+        return np.clip(0, 255, s).astype(np.uint8)
 
     def __call__(self) -> None:
         self.__root.mainloop()
