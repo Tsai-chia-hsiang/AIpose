@@ -51,18 +51,42 @@ class app():
         self.__img = None
         self.__read_and_set_photo_bnts()
         self.__phone_scene = {'phone':[],'srcimage':[]}
+        self.__next_icon = None
+        self.__prev_icon = None
         self.__next_pose_set_bnt = None
         self.__previous_pose_set_bnt = None
+        self.__make_pose_bar_next_previous_icon()
         self.__phone_background()
         self.__poseid_base = 0
         self.__select_scene = None
+    
+    def __make_pose_bar_next_previous_icon(self):
         
+        i = Image.open(os.path.join("features","prev.png"))
+        i = i.resize((20,20))
+        self.__prev_icon = ImageTk.PhotoImage(i)
+        i = Image.open(os.path.join("features","next.png"))
+        i = i.resize((20,20))
+        self.__next_icon = ImageTk.PhotoImage(i)
+        self.__next_pose_set_bnt = tk.Button(self.__root, image=self.__next_icon, command=lambda c = 1:self.__update_pose_choosen(c))
+        self.__previous_pose_set_bnt = tk.Button(self.__root, image=self.__prev_icon,command= lambda c = -1:self.__update_pose_choosen(c))
+
     def __phone_background(self):
 
         img = Image.open('phone.jpg')
         self.__phone_scene['srcimage'].append(ImageTk.PhotoImage(img.resize((354,719))))
         self.__phone_scene['phone'].append(tk.Label(self.__root, image = self.__phone_scene['srcimage'][0]))
         self.__phone_scene['phone'][0].place(x=300, y=10)
+
+    def __pose_bnt_bar(self):
+        self.__del_pose_bnt()
+        self.__make_pose_bnt()
+        self.__place_pose_bar()
+
+    def __update_pose_choosen(self, j:int):
+        
+        self.__poseid_base += j*3
+        self.__pose_bnt_bar()
 
     def __read_and_set_photo_bnts(self):
 
@@ -103,7 +127,9 @@ class app():
         gc.collect()
     
     def __make_pose_bnt(self):
+        
         pose_pathes = self.__pose_selection[self.__poseid_base:self.__poseid_base+3]
+        
         for idx, p in enumerate(pose_pathes):
             i = Image.open(p)
             i = ImageTk.PhotoImage(i.resize((60,100)))
@@ -117,11 +143,25 @@ class app():
             )
     
     def __place_pose_bar(self):
+        
         offset = 0
+        
         for idx in range(len(self.__pose['bnt'])):
-            self.__pose['bnt'][idx].place(x = 355+offset, y = 120)
+            self.__pose['bnt'][idx].place(x = 365+offset, y = 120)
             self.__pose['bnt'][idx].lift(self.__demo_scene)
             offset += 85
+        
+        if self.__poseid_base > 2:
+            self.__previous_pose_set_bnt.place(x = 330, y = 160)
+            self.__previous_pose_set_bnt.lift(self.__demo_scene)
+        else:
+            self.__previous_pose_set_bnt.place_forget()
+        
+        if self.__poseid_base+3 < len(self.__pose_selection):
+            self.__next_pose_set_bnt.place(x = 605, y = 160)
+            self.__next_pose_set_bnt.lift(self.__demo_scene)
+        else:
+            self.__next_pose_set_bnt.place_forget()
     
     def __show_scene(self, i:int):
         self.__select_scene = i
@@ -159,7 +199,7 @@ class app():
         self.__img = ImageTk.PhotoImage(Image.fromarray(self.__img))    
         self.__demo_scene = tk.Label(self.__root, image=self.__img)
         self.__demo_scene.place(x=320, y=114)
-        self.__place_pose_bar()
+        self.__pose_bnt_bar()
 
     def combine_pose_to_scene(self, scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndarray)->np.ndarray:
         
