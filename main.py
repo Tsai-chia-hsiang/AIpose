@@ -21,30 +21,36 @@ def walk_dir(root:os.PathLike)->list:
             u.append(os.path.join(r, f))             
     return u
 
-def combine_pose_to_scene(scene:os.PathLike, pose:os.PathLike)->np.ndarray:
+def combine_pose_to_scene(scene:os.PathLike|np.ndarray, pose:os.PathLike|np.ndarray)->np.ndarray:
     
     def resize_pose_shape(poseshape:tuple, sceneshape:tuple)->tuple:
-        max_aix = np.argmax(poseshape) # 0 or 1
-        ratio = poseshape[1-max_aix]/poseshape[max_aix]
-        resize_aix_ratio = sceneshape[max_aix]/1.6
-        resize = [0,0]
-        resize[max_aix] = int(resize_aix_ratio)
-        resize[1-max_aix] = int(resize_aix_ratio*ratio)
+        f = 1.6 if np.argmax(sceneshape) == 0 else 1.0 
+        ratio = poseshape[1]/poseshape[0]
+        print(ratio)
+        resize_aix_ratio = sceneshape[0]/f
+        resize = [int(resize_aix_ratio),int(resize_aix_ratio*ratio)]
+        print(resize)
+        if resize[1] > sceneshape[1]:
+            resize[1] = int(sceneshape[1]/f)
         resize.reverse()
+        print(resize)
         return tuple(resize)
-
-    s = cv2.imread(scene).astype(np.float32)
-    spose = cv2.imread(pose)
-   
-    sshape = s.shape
-    spose = cv2.resize(spose,resize_pose_shape(spose.shape, sshape))
-    spose = spose.astype(np.float32)
-    w_left = sshape[1]//2 - spose.shape[1]//2
-
-    m = (spose <= 80.0).astype(np.float32)
-    posepart =s[s.shape[0]-spose.shape[0]:s.shape[0], w_left:w_left+spose.shape[1],:] 
     
-    s[s.shape[0]-spose.shape[0]:s.shape[0], w_left:w_left+spose.shape[1],:] = posepart*m + spose
+    s = cv2.imread(scene) if isinstance(scene, str) else scene
+    spose = cv2.imread(pose) if isinstance(pose, str) else pose
+    sshape = s.shape
+    resize = resize_pose_shape(spose.shape, sshape)
+    spose = cv2.resize(spose,resize)
+    spose = spose.astype(np.float32)
+
+    print(sshape)
+    print(spose.shape)
+
+    w_left = sshape[1]//2 - spose.shape[1]//2
+    print(w_left)
+    m = (spose <= 85.0).astype(np.float32)
+    posepart =s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] 
+    s[s.shape[0]-10-spose.shape[0]:s.shape[0]-10, w_left:w_left+spose.shape[1],:] = posepart*m + spose
     return np.clip(0, 255, s).astype(np.uint8)
 
 
